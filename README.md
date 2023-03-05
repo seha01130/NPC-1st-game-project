@@ -1,10 +1,12 @@
- 4개의 minigame 중 farming 파트 작업
-
- mainScreen 및 startScreen 작업
-
- 오디오 및 json 작업
-
-
-구글플레이스토어 link https://play.google.com/store/apps/details?id=ddwu.npc.woong
-
+## [중앙동아리 NPC LUA game project] :bear: 웅녀키우기
 ![메인일러 최종](https://user-images.githubusercontent.com/102642679/222091269-74f0e388-5d32-4f02-9b27-de0d5479c165.png)
+
+:link: [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong)
+---
+> **What I did**
+
+- 4개의 minigame 중 farming 파트 작업
+- startScreen 작업
+- mainScreen 작업
+- setting & 도움말 작업
+- audio sound & json 작업
