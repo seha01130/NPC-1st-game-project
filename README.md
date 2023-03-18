@@ -10,3 +10,7 @@
 - mainScreen 작업
 - setting & 도움말 작업
 - audio sound & json 작업
+------
+> **Notion**
+
+https://mango-alibi-88b.notion.site/2bae7b577e214cd791c67a00fa9eff85
