@@ -13,4 +13,4 @@
 ------
 > **Notion**
 
-https://mango-alibi-88b.notion.site/2bae7b577e214cd791c67a00fa9eff85
+https://www.notion.so/2bae7b577e214cd791c67a00fa9eff85?pvs=4
