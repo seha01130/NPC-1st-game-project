@@ -12,6 +12,8 @@
 - setting & 도움말 작업
 - audio sound & json 작업
 ------
+**:link: [개발자 문서 사이트](https://docs.coronalabs.com/)**</br>
+
 > **메인 게임 기능 정리**
 - game start 버튼이 들어간 진입화면 ⇒ 메인 화면 진입
 - 메인화면 → 미니게임 선택하는 화면 진입/옵션/도움말/성장도(전체/각분야별)/수련
@@ -26,9 +28,6 @@
 - 재화 저장은 json 파일 입출력 활용
 
 
-> **개발자 문서 사이트**</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:link: [Solar2D Documentation](https://docs.coronalabs.com/)
-
 > **JSON 간단 설명** [json 파일 입출력으로 세이브로드 구현하기]
   - 로드(스터디에서 사용) (jsonParse)
     - system.pathForFile()로 json파일을 찾음
@@ -37,48 +36,62 @@
     - system.pathForFile()로 json파일을 찾음
     - (decode의 반대는 encode) json.encode()로 lua에서 사용 가능했던 data를 텍스트로 바꿈
     - local file, errorString = io.open( path, "w" )로 파일을 쓰기 모드로 열어서 file:write( encode()로 바꾼 텍스트 )
-    - io.close( file )로 파일 닫음</br>
+    - io.close( file )로 파일 닫음 </br>
 :link: [파일 쓰기 관련 개발자 사이트 가이드](https://docs.coronalabs.com/guide/data/readWriteFiles/index.html#writing-files)
 
-> **json관련 공유**
-> **세이브 부분**
-
-json.encode()사용했을 시 attempt to index global 'json' (a nil value)오류가 뜬다면 : 
-
-local json = require(”json”)작성으로 해결
-
-오류들
-
+> **json 세이브 기능 정리** </br>
+main.lua에 함수 작성
 ```LUA
-if not file then
-		print("File error: " .. errorString)
+local json = require "json"
+
+function jsonParse( src )
+	local filename = system.pathForFile( src )
+	
+	local data, pos, msg = json.decodeFile( filename )
+
+	if data then
+		return data
 	else
-		file:write(money)
-		io.close(file)
+		print("WARNING: " .. pos, msg)
+		return nil
 	end
-  ```
-  
-  not file에 걸려서  Documents\json/status.json: No such file or directory이 출력
+end
 
-해결하고 싶어서 pathForFile()에 json/을 지워봄 > 오류는 생기지 않지만 저장도 되지 않는다.
+function jsonSave( src, data )
+	local filename = system.pathForFile( src )
 
-```LUA
-file:write(money)
-io.close(file)
+	local text, pos, msg = json.encode( data )
+
+	local file, errorString = io.open( filename, "w" )
+
+	if not file then
+		print("File error: " .. errorString )
+	else
+		file:write( text )
+		io.close( file )
+	end
+end
 ```
-if문 없애고 이렇게 적었을 시에는 > attempt to index local 'file' (a nil value) 오류
-
+데이터 값을 저장해야하는 lua파일에 데이터를 불러오기, 데이터 값 바뀐 것 적용
 ```LUA
-local path = system.pathForFile("json/status.json")--, system.DocumentsDirectory)
-```
-main이 다시 열렸고 json파일에 데이터가 저장되었다. >한번만 저장되고 그 다음부터는 저장이 되지않음
-jsonSave()함수로 인해 발생하는 것과 비슷한 결과..
+local Data = jsonParse("json/status.json")
+	Data.nyang_json = Data.nyang_json + ending_score
+	if (Data) then
+		print(Data.IQ_json)
+		print(Data.stamina_json)
+		print(Data.art_json)
+		print(Data.living_json)
+		print(Data.nyang_json)
+	end
 
-파일오류를 고치기 위해서 pathForFile()에 경로를 C:/~~ 자세히 적었더니 아래 줄에서 오류 발생
-```LUA
-local file, errorString = io.open(path, "w")
+	jsonSave("json/status.json", Data)
 ```
-bad argument #1 to 'open' (string expected, got nil) 오류
+</br>
+Q. 만약 자꾸 프로젝트가 다시 시작되는 오류가 발생한다면? </br>
+A. solar2D 시뮬레이터가 파일이 변경되면 바로 다시 실행하기 때문이다. </br></br>
 
-추측 :아마 경로로 인해 nil으로 나오는 것 같다
+**해결책** </br>
+시뮬레이터에서 file > Preferences >Never 선택 </br>
+❗❗이 설정을 하기 전에는 편집프로그램에서 저장을 누르면 프로젝드가 다시 실행되었겠지만, </br>
+설정을 바꿨으므로 프로젝트를 재시작하기 위해서 ctrl + r을 사용해야 한다.
 
