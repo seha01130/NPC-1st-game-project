@@ -1,4 +1,4 @@
-## [중앙동아리 NPC LUA game project] :bear: 웅녀키우기
+## [게임개발동아리 NPC - LUA game project] :bear: 웅녀키우기
 ![메인일러 최종](https://user-images.githubusercontent.com/102642679/222091269-74f0e388-5d32-4f02-9b27-de0d5479c165.png)
 
 :link: [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
