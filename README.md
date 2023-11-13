@@ -1,18 +1,12 @@
 ## [게임개발동아리 NPC - LUA game project] :bear: 웅녀키우기
 ![메인일러 최종](https://user-images.githubusercontent.com/102642679/222091269-74f0e388-5d32-4f02-9b27-de0d5479c165.png)
 
-:link: [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+⬇ [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 :video_camera: [게임 시연영상](https://youtu.be/PoZm6OoTf3Q)
 ------
+</br>
 
-> **What I did** </br>
-- 4개의 minigame 중 farming 파트 작업
-- startScreen 작업
-- mainScreen 작업
-- setting & 도움말 작업
-- audio sound & json 작업
-------
-**:link: [개발자 문서 사이트](https://docs.coronalabs.com/)**</br>
+**:link: [개발자 문서 사이트](https://docs.coronalabs.com/)** </br>
 
 > **메인 게임 기능 정리**
 - game start 버튼이 들어간 진입화면 ⇒ 메인 화면 진입
@@ -26,7 +20,7 @@
 - 엔딩화면 → 수련일러스트+문구→엔딩일러스트+웅녀다시키우기 버튼(reset)
 - 수련 → 8번 가면 엔딩/수련금액 1회당 1000냥
 - 재화 저장은 json 파일 입출력 활용
-
+</br>
 
 > **JSON 간단 설명** [json 파일 입출력으로 세이브로드 구현하기]
   - 로드(스터디에서 사용) (jsonParse)
@@ -38,6 +32,7 @@
     - local file, errorString = io.open( path, "w" )로 파일을 쓰기 모드로 열어서 file:write( encode()로 바꾼 텍스트 )
     - io.close( file )로 파일 닫음 </br>
 :link: [파일 쓰기 관련 개발자 사이트 가이드](https://docs.coronalabs.com/guide/data/readWriteFiles/index.html#writing-files)
+</br>
 
 > **json 세이브 기능 정리** </br>
 main.lua에 함수 작성
@@ -88,10 +83,10 @@ local Data = jsonParse("json/status.json")
 ```
 </br>
 Q. 만약 자꾸 프로젝트가 다시 시작되는 오류가 발생한다면? </br>
-A. solar2D 시뮬레이터가 파일이 변경되면 바로 다시 실행하기 때문이다. </br></br>
+A. solar2D 시뮬레이터가 파일이 변경되면 바로 다시 실행하기 때문. </br></br>
 
-**해결책** </br>
+**해결** </br>
 시뮬레이터에서 file > Preferences >Never 선택 </br>
-❗❗이 설정을 하기 전에는 편집프로그램에서 저장을 누르면 프로젝드가 다시 실행되었겠지만, </br>
-설정을 바꿨으므로 프로젝트를 재시작하기 위해서 ctrl + r을 사용해야 한다.
+❗이 설정을 하기 전에는 편집프로그램에서 저장을 누르면 프로젝드가 다시 실행되었겠지만, </br>
+❗설정을 바꿨으므로 프로젝트를 재시작하기 위해서 ctrl + r을 사용해야 한다.
 
