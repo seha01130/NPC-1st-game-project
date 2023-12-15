@@ -2,7 +2,7 @@
 ![메인일러 최종](https://user-images.githubusercontent.com/102642679/222091269-74f0e388-5d32-4f02-9b27-de0d5479c165.png)
 
 ⬇ [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-:video_camera: [게임 시연영상](https://youtu.be/PoZm6OoTf3Q)
+📹 [게임 시연영상](https://youtu.be/PoZm6OoTf3Q)
 ------
 </br>
 
