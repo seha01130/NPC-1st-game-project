@@ -4,9 +4,19 @@
 ⬇ [Google Playstore](https://play.google.com/store/apps/details?id=ddwu.npc.woong) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 📹 [게임 시연영상](https://youtu.be/PoZm6OoTf3Q)
 ------
-</br>
 
-**:link: [개발자 문서 사이트](https://docs.coronalabs.com/)** </br>
+
+**:link: [개발자 문서 사이트](https://docs.coronalabs.com/)** </br></br>
+
+
+> **What I did** </br>
+
+✔ Game Start 진입화면</br>
+✔ 메인화면</br>
+✔ 설정창 작업</br>
+✔ 게임설명창</br>
+✔ 미니게임 중 farming</br>
+✔ 재화 관리 및 수련진행도 관리</br>
 
 > **메인 게임 기능 정리**
 - game start 버튼이 들어간 진입화면 ⇒ 메인 화면 진입
